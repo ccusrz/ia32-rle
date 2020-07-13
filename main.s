@@ -15,7 +15,6 @@
     err5: .asciz "%s: In regards to this project, that RLE format file is invalid\n"
     ag: .asciz "Done.\nWould you want to operate with another file? (y/n): "
     y: .asciz "y"
-    n: .asciz "n"
     hzero: .asciz "0x"
     
     #Header files parameters, printf formats, macros and extensions
@@ -24,7 +23,6 @@
     fmt1: .asciz "%d"
     fmt2: .asciz "%s"
     fmt3: .asciz "06%d"
-    fmtx: .asciz ""
     fmode1: .asciz "rb"
     fmode2: .asciz "w"
     hxpadd1: .asciz "%04X%s"
