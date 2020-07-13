@@ -69,12 +69,12 @@ _main:
     choice:
        	
         pushl $sb_rle
-        pushl $cpy1	      #Copying RLE file
+        pushl $cpy1	  #Copying RLE file
         call _strcpy      #magic number
         addl $8, %esp
 
         pushl $sb_pbm
-        pushl $cpy2	      #Copying PBM file
+        pushl $cpy2	  #Copying PBM file
         call _strcpy      #magic number
         addl $8, %esp
 
@@ -222,7 +222,7 @@ _main:
         	jne diff
             
         	pushl $buff1
-        	pushl $cpy3	      #Copying actual byte
+        	pushl $cpy3	  #Copying actual byte
         	call _strcpy
         	addl $8, %esp
             
@@ -317,7 +317,7 @@ _main:
     	movl $1, multi    #Restarting multiplier
 
     	pushl $hzero
-    	pushl $cpy4	      #Copying leading hexa-zero Ox
+    	pushl $cpy4	  #Copying leading hexa-zero Ox
     	call _strcpy
     	addl $8, %esp
 
@@ -354,8 +354,8 @@ _main:
     
         pushl $buff1     
         pushl $cpy1  
-        call _strcmp      #Validating that the rle file
-        addl $8, %esp     #starts from "0x524C4549"
+        call _strcmp      #Validating RLE file magic number
+        addl $8, %esp     
         cmpl $0, %eax
         jne ipt_err4
 
@@ -410,7 +410,7 @@ _main:
 
         	pushl $16
         	pushl $null
-        	pushl $cpy4	      #Conversion from hex to long
+        	pushl $cpy4	  #Conversion from hex to long
         	call _strtol	  
         	movl %eax, %ebx   #%ebx will have this resulting long
 
@@ -420,7 +420,7 @@ _main:
     		addl $8, %esp
 
         	pushl fptr
-        	pushl $1	      #Reading next 2 bytes
+        	pushl $1	  #Reading next 2 bytes
         	pushl $2          #corresponding the image pixel, respectively.
         	pushl $buff2      #If this was not applicable, then
         	call _fread       #we can assume that the input rle format
@@ -431,7 +431,7 @@ _main:
             	pushl %ebx
 
             	pushl $buff2
-            	pushl %ebx    #Multiplying bytes
+            	pushl %ebx    	  #Multiplying bytes
             	call mul
             	addl $12, %esp
 
