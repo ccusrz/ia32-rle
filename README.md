@@ -1,4 +1,3 @@
-## Description
 Script written in AT&T assembly responding to the Intel IA32 processor running Windows 7.
 
 ## Approach
