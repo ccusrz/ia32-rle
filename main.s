@@ -1,37 +1,37 @@
 .section .rodata
 
-    #Each file starter bytes
+    #Magic numbers of each file
     sb_pbm: .string "0x5031"
     sb_rle: .string "0x524C4549"
     
-    #Stdout stuff
-    mnu: .string "\nMenu:\n1. Compress PBM image\n2. Decompress RLE image\n3. Exit\n\nSo your choice is: "
-    req: .string "Input file name with extension: "
-    req2: .string "Output file name: "
-    err1: .string "Invalid answer. You can try again: "
-    err2: .string "File couldn't be opened"
-    err3: .string "%s: In this project, the PBM image should start at 0x5031\n"
-    err4: .string "%s: In this project, the RLE image should start at 0x524C4549\n"
-    err5: .string "%s: In regards to this project, that RLE format file is invalid\n"
-    ag: .string "Done.\nWould you want to operate with another file? (y/n): "
-    y: .string "y"
-    n: .string "n"
-    hzero: .string "0x"
+    #Elements to be referenced in stdout file
+    mnu: .asciz "\nMenu:\n1. Compress PBM image\n2. Decompress RLE image\n3. Exit\n\nSo your choice is: "
+    req: .asciz "Input file name with extension: "
+    req2: .asciz "Output file name: "
+    err1: .asciz "Invalid answer. You can try again: "
+    err2: .asciz "File couldn't be opened"
+    err3: .asciz "%s: In this project, the PBM image should start at 0x5031\n"
+    err4: .asciz "%s: In this project, the RLE image should start at 0x524C4549\n"
+    err5: .asciz "%s: In regards to this project, that RLE format file is invalid\n"
+    ag: .asciz "Done.\nWould you want to operate with another file? (y/n): "
+    y: .asciz "y"
+    n: .asciz "n"
+    hzero: .asciz "0x"
     
-    #Header files parameters, formats, macros and extensions
-    frle: .string ".rle"
-    fpbm: .string ".pbm"
+    #Header files parameters, printf formats, macros and extensions
+    frle: .asciz ".rle"
+    fpbm: .asciz ".pbm"
     fmt1: .asciz "%d"
     fmt2: .asciz "%s"
     fmt3: .asciz "06%d"
     fmtx: .asciz ""
     fmode1: .asciz "rb"
     fmode2: .asciz "w"
-    hxpadd1: .string "%04X%s"
-    hxpadd2: .string "%04X"
-    succ: .string "EXIT_SUCCESS"
-    fail: .string "EXIT_FAILURE"
-    null: .string "NULL"
+    hxpadd1: .asciz "%04X%s"
+    hxpadd2: .asciz "%04X"
+    succ: .asciz "EXIT_SUCCESS"
+    fail: .asciz "EXIT_FAILURE"
+    null: .asciz "NULL"
 
 .section .data
 
@@ -43,19 +43,19 @@
 
 .section .bss
     
-    #Reserved memory areas (big lengths due to underflow issues)
-    .comm opt, 10000
-    .comm fptr, 2000
-    .comm fname, 1000
-    .comm fname2, 1000
-    .lcomm fncpy, 1000
-    .lcomm cpy1, 10000
-    .lcomm cpy2, 10000
-    .lcomm cpy3, 10000
-    .lcomm cpy4, 10000
-    .lcomm buff1, 10000
-    .lcomm buff2, 10000
-    .lcomm buff3, 10000
+    #Reserved memory areas (big lengths in case of underflow issues)
+    .comm opt, 10
+    .comm fptr, 10
+    .comm fname, 10
+    .comm fname2, 10
+    .lcomm fncpy, 10
+    .lcomm cpy1, 10
+    .lcomm cpy2, 10
+    .lcomm cpy3, 10
+    .lcomm cpy4, 10
+    .lcomm buff1, 1000
+    .lcomm buff2, 1000
+    .lcomm buff3, 1000
     .lcomm rle_pixels, 100000000
     .lcomm pbm_pixels, 100000000
     
