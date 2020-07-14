@@ -175,9 +175,9 @@ _main:
         call _strcat      #to rle file preface
         addl $8, %esp
 
-        pushl $10000
+        pushl $1000
         pushl $0            
-        pushl $buff1      #Clearing buff1
+        pushl $buff1      
         call _memset
         addl $12, %esp
 
@@ -197,9 +197,9 @@ _main:
     
     	pwhile:
 
-    		pushl $10000
+    		pushl $1000
         	pushl $0            
-        	pushl $buff1      #Clearing buff1
+        	pushl $buff1     
         	call _memset
         	addl $12, %esp
 
@@ -300,7 +300,7 @@ _main:
 
         pushl $100000000
         pushl $0
-        pushl $rle_pixels #Clearing buff1
+        pushl $rle_pixels
         call _memset
         addl $8, %esp
 
@@ -357,9 +357,9 @@ _main:
         cmpl $0, %eax
         jne ipt_err4
 
-        pushl $10000
+        pushl $1000
         pushl $0               
-        pushl $buff1      #Clearing buff1
+        pushl $buff1      
         call _memset	     
         addl $12, %esp
 
@@ -375,9 +375,9 @@ _main:
         call _strcat      #to pbm file preface
         addl $8, %esp
 
-        pushl $10000
+        pushl $1000
         pushl $0               
-        pushl $buff1      #Clearing buff1
+        pushl $buff1      
         call _memset	     
         addl $12, %esp
 
@@ -468,7 +468,7 @@ _main:
 
         pushl $100000000
         pushl $0
-        pushl $pbm_pixels #Clearing memory areas
+        pushl $pbm_pixels 
         call _memset
         addl $8, %esp
 
