@@ -41,7 +41,7 @@
 
 .section .bss
     
-    #Reserved memory areas (big lengths in case of underflow issues)
+    #Reserved memory areas (big lengths in case of overrflow issues)
     .comm opt, 10
     .comm fptr, 10
     .comm fname, 10
